@@ -1,0 +1,43 @@
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+body { background-color: #f8f9fa; }
+span { color: #ff4757; }
+
+/* Navigation */
+header {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 20px 5%; background: white; position: sticky; top: 0; z-index: 1000;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+.logo { font-size: 24px; font-weight: bold; }
+nav a { margin: 0 15px; text-decoration: none; color: #333; font-weight: 500; }
+.login-btn { background: #ff4757; color: white; border: none; padding: 8px 20px; border-radius: 5px; cursor: pointer; }
+
+/* Hero Section */
+.hero {
+    height: 80vh; background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
+    url('https://images.unsplash.com/photo-1504674900247-0877df9cc836?q=80&w=1400');
+    background-size: cover; display: flex; align-items: center; justify-content: center;
+    color: white; text-align: center;
+}
+.hero h1 { font-size: 3.5rem; margin-bottom: 10px; }
+.search-bar input { padding: 15px; width: 300px; border-radius: 30px 0 0 30px; border: none; }
+.search-bar button { padding: 15px 30px; border-radius: 0 30px 30px 0; border: none; background: #ff4757; color: white; }
+
+/* Food Cards */
+.food-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; padding: 40px 0; }
+.food-card { background: white; border-radius: 15px; overflow: hidden; transition: 0.3s; box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
+.food-card:hover { transform: translateY(-10px); }
+.food-card img { width: 100%; height: 200px; object-fit: cover; }
+.card-info { padding: 15px; }
+.price-row { display: flex; justify-content: space-between; align-items: center; margin-top: 10px; }
+.price { font-weight: bold; font-size: 1.2rem; color: #2ed573; }
+
+/* Tracking */
+.track-card { background: white; padding: 30px; border-radius: 15px; display: flex; justify-content: space-around; margin-top: 20px; }
+.step { color: #ccc; font-weight: bold; }
+.step.active { color: #2ed573; }
+
+/* Sidebar & Modals */
+.sidebar { position: fixed; right: -400px; top: 0; width: 300px; height: 100%; background: white; z-index: 2000; padding: 20px; transition: 0.4s; box-shadow: -5px 0 15px rgba(0,0,0,0.1); }
+.sidebar.open { right: 0; }
+.modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.7); z-index: 3000; justify-content: center; align-items: center; }
