@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Foodie Express | Premium Delivery</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+    <header>
+        <div class="logo">Foodie<span>Express</span></div>
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#menu">Menu</a>
+            <a href="#restaurants">Restaurants</a>
+            <a href="#track">Track Order</a>
+            <button class="login-btn" onclick="toggleLogin()">Login</button>
+            <div class="cart-icon" onclick="toggleCart()">
+                🛒 <span id="cart-count">0</span>
+            </div>
+        </nav>
+    </header>
+
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Cravings delivered to <br>your <span>Doorstep.</span></h1>
+            <p>Freshly prepared meals from the best restaurants in town.</p>
+            <div class="search-bar">
+                <input type="text" placeholder="Search for Butter Chicken, Pizza, Burgers...">
+                <button>Search</button>
+            </div>
+        </div>
+    </section>
+
+    <section id="menu" class="container">
+        <h2 class="section-title">Popular Dishes</h2>
+        <div class="food-grid">
+            <div class="food-card">
+                <img src="https://images.unsplash.com/photo-1588166524941-3bf61a9c41db?q=80&w=400" alt="Burger">
+                <div class="card-info">
+                    <h3>Classic Burger</h3>
+                    <p>Juicy patty with secret sauce</p>
+                    <div class="price-row">
+                        <span class="price">$12.00</span>
+                        <button onclick="addToCart('Burger', 12)">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="food-card">
+                <img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?q=80&w=400" alt="Pizza">
+                <div class="card-info">
+                    <h3>Pepperoni Pizza</h3>
+                    <p>Cheesy loaded with pepperoni</p>
+                    <div class="price-row">
+                        <span class="price">$15.00</span>
+                        <button onclick="addToCart('Pizza', 15)">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="food-card">
+                <img src="https://images.unsplash.com/photo-1603894584373-5ac82b2ae398?q=80&w=400" alt="Butter Chicken">
+                <div class="card-info">
+                    <h3>Butter Chicken</h3>
+                    <p>Rich creamy tomato gravy</p>
+                    <div class="price-row">
+                        <span class="price">$18.00</span>
+                        <button onclick="addToCart('Butter Chicken', 18)">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="track" class="container track-section">
+        <h2>Track Your Order</h2>
+        <div class="track-card">
+            <div class="step active">✔ Order Confirmed</div>
+            <div class="step active">✔ Food Preparing</div>
+            <div class="step">🛵 On the Way</div>
+            <div class="step">🏠 Delivered</div>
+        </div>
+    </section>
+
+    <div id="cart-sidebar" class="sidebar">
+        <h2>Your Cart</h2>
+        <div id="cart-items"></div>
+        <hr>
+        <div class="total">Total: $<span id="cart-total">0</span></div>
+        <button class="checkout-btn" onclick="processPayment()">Pay Now</button>
+        <button onclick="toggleCart()">Close</button>
+    </div>
+
+    <div id="login-modal" class="modal">
+        <div class="modal-content">
+            <h2>Login to Foodie</h2>
+            <input type="email" placeholder="Email">
+            <input type="password" placeholder="Password">
+            <button class="login-btn">Submit</button>
+            <button onclick="toggleLogin()">Cancel</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
